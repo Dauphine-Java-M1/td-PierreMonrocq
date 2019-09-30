@@ -9,7 +9,7 @@ public class Main {
 		ArrayList<Integer> monarraylist = new ArrayList<Integer>();
 		PrimeCollection pc = new PrimeCollection(monarraylist);
 		
-		pc.initRandom(100, 1000);
+		pc.initRandom(100, 2000);
 		pc.printPrimes();
 	}
 
