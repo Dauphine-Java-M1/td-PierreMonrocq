@@ -1,0 +1,31 @@
+MONROCQ Pierre
+
+4. Version 3.6
+5. groupeId: Id du groupe à l'origine du projet, artifactId: Nom du projet
+
+6. mvn compile: <properties>
+    		  <maven.compiler.source>1.8</maven.compiler.source>
+    		  <maven.compiler.target>1.8</maven.compiler.target>
+  		</properties>
+   car ERREUR "Source option 5 is no longer supported. Use 6 or later."
+
+8. indique le chemin des classes -> d'après man, chemin de recherche de classe de répertoires et de fichiers ZIP/JAR.
+
+13. On doit lui donner la valeur 1.8 si l'on souhaite que le bytecode java soit compilé en 1.8
+
+fa
+Ex 2 
+
+1. Execute le fichier JAR
+
+
+TP00bis
+
+5. On peut observer dans le terminal, la ligne modifiée.
+
+
+8. premier commit: be7e63725c14deaa577ef4e2b46a64de217b85dc
+deuxième commit: 8f2d0f210ac985468649373e55fa903e93bb6e65
+
+
+
