@@ -1,2 +1,29 @@
 MONROCQ Pierre
 
+1. Cela fonctionne car main() et dans la même classe que les champs x et y.
+
+2. Les paramètres x et y ne sont pas accessible dans la classe, car ils sont privés
+dans Point.java. Il faut utiliser des ascesseurs (get, set).
+
+3. Cela évite que les variables soient modifiées dans d'autres classes. C'est une bonne
+pratique en programmation objet. C'est l'encapsulation
+
+4. Un accesseur est une fonction qui permet d'acceder au données encapsulée.
+Oui, pour acceder à x et y.
+
+5. Il n'y a plus de constructeur vide
+
+6. Ca ne marche pas car la variable privée est confondue avec l'argument x du constructeur.
+(Pareil avec y).
+
+7. Il faut creer une variable statique qui compte les points.
+
+8. Cela depend du nombre d'arguments.
+
+Ex2.
+
+1. false, false. Les pointeurs sont comparés et non pas la valeur
+
+2. indexOf utilise la méthode equals
+
+
