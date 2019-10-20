@@ -5,23 +5,21 @@ import java.util.List;
 
 public class LigneBrisee {
 	
-	private List<Point> data;
-	private int nombrePoints = 0;
+	private List<Point> points;
 
-	public LigneBrisee(int nombreMaxPoints) {
-		this.nombrePoints = nombreMaxPoints;
-		this.data = new LinkedList<Point>();
+	public LigneBrisee() {
+		this.points = new LinkedList<Point>();
 	}
 	
 	public int getNombrePoints() {
-		return nombrePoints;
+		return points.size();
 	}
 	
-	public List<Point> getData() {
-		return data;
+	public void add(Point point) {
+		points.add(point);
 	}
 	
-	public void add() {
-		
+	public boolean contains(Point point) {
+		return points.contains(point);
 	}
 }

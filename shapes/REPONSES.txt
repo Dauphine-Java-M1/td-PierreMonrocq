@@ -1,5 +1,7 @@
 MONROCQ Pierre
 
+Ex1.
+
 1. Cela fonctionne car main() et dans la même classe que les champs x et y.
 
 2. Les paramètres x et y ne sont pas accessible dans la classe, car ils sont privés
@@ -22,8 +24,37 @@ Oui, pour acceder à x et y.
 
 Ex2.
 
-1. false, false. Les pointeurs sont comparés et non pas la valeur
+1. true, false. p2 fait reference au même objet que p1 tandis que p3 fait référence à un autre objet.
 
-2. indexOf utilise la méthode equals
+3. indexOf utilise la méthode equals, si cette méthode est mal définit indexOf ne va pas fonctionner
+comme souhaité
+
+Ex3.
+
+2. Il y aura une exception pour un indice hors limite de la liste.
+
+4. Il y aura une NullPointerException, null.equals(obj) n'est pas possible.
+
+6. La variable qui stocke le nombre de points est inutile, l'objet liste s'occuper d'allouer de la place
+et possède aussi une variable interne qui permet de récuperer le nombre de points dans la liste. 
+
+Ex4.
+
+2. Les deux objets Point font référence à un objet mutable. Pour regler le problème on peut faire en sorte que la
+copie des objets soit immutable.
+
+3. On peut modifier le centre sans passer par un accesseur.
+
+5. Aucunes propriétés de l'objet n'est utilisé, une méthode statique a donc du sens.
 
 
+Ex5.
+
+1. L'héritage dans ce cas de figure n'est pas vraiment souhaitable:
+	Il faudrait réimplémenter les méthodes définies pour un Cercle
+	D'un point de vue conceptuel, un anneau n'est pas un cercle
+	Une modification de la classe cercle entrainerait une modification de la classe Anneau
+	
+4. Il faut redefinir la méthode toString() pour pouvoir visualiser un anneau.
+	
+	
