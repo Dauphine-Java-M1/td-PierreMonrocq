@@ -1,6 +1,6 @@
 package fr.dauphine.ja.monrocqpierre.shapes;
 
-public class Anneau {
+public class Anneau extends Forme {
 	
 	
 	private Cercle cercleExterne;

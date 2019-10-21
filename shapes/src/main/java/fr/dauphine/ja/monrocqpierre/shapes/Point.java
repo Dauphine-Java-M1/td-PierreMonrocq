@@ -1,6 +1,6 @@
 package fr.dauphine.ja.monrocqpierre.shapes;
 
-public class Point {
+public class Point extends Forme {
 	
 	private int x;
 	private int y;

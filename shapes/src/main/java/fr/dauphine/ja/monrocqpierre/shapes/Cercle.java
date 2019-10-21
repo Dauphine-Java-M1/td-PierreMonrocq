@@ -1,6 +1,6 @@
 package fr.dauphine.ja.monrocqpierre.shapes;
 
-public class Cercle {
+public class Cercle extends Forme {
 	
 	private Point c;
 	private double r;
