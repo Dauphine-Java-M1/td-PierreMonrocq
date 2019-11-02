@@ -1,6 +1,8 @@
-package fr.dauphine.ja.monrocqpierre.shapes;
+package shapes;
 
-public class Anneau extends Forme {
+import view.Drawer;
+
+public class Anneau implements Forme {
 	
 	
 	private Cercle cercleExterne;
@@ -46,6 +48,12 @@ public class Anneau extends Forme {
 	
 	public double getRayonInterieur() {
 		return rayonInterieur;
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

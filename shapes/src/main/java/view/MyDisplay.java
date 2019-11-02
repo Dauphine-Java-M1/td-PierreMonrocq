@@ -1,31 +1,25 @@
 package view;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import controller.ShapeController;
-import fr.dauphine.ja.monrocqpierre.shapes.Observer;
+import shapes.Dessin;
+import shapes.Forme;
 
-public class MyDisplay extends JFrame implements Observer{
+public class MyDisplay extends JPanel{
 
 	private static final long serialVersionUID = 1L;
-	private JPanel container = new JPanel();
+	private Dessin dessin;
 
-	private ShapeController controler;
-
-	public MyDisplay() {
-		setSize(500,500);
-		setTitle("Mes formes");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		setVisible(true);
+	public MyDisplay(Dessin d) {
+		this.dessin = d;
 	}
 	
 	@Override
-	public void update() {
+	protected void paintComponent(Graphics g) {
+		for(Forme f : dessin.getFormes()) {
+			f.getDrawer().draw(g);
+		}
 	}
-	
 }

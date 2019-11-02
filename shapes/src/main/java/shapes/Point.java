@@ -1,6 +1,8 @@
-package fr.dauphine.ja.monrocqpierre.shapes;
+package shapes;
 
-public class Point extends Forme {
+import view.Drawer;
+
+public class Point implements Forme {
 	
 	private int x;
 	private int y;
@@ -15,6 +17,13 @@ public class Point extends Forme {
 		this.x = x;
 		this.y = y;
 		Point.nbPoints++;
+	}
+	
+	public Point(int x, int y, Dessin d) {
+		this.x = x;
+		this.y = y;
+		Point.nbPoints++;
+		d.add(this);
 	}
 	
 	public int getX() {
@@ -55,6 +64,12 @@ public class Point extends Forme {
 	
 	public double produitScalaire(Point point) {
 		return Math.pow(point.getX() - this.x, 2) + Math.pow(point.getY() - this.y, 2);
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

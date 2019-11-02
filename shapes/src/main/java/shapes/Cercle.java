@@ -1,14 +1,26 @@
-package fr.dauphine.ja.monrocqpierre.shapes;
+package shapes;
 
-public class Cercle extends Forme {
+import view.CercleDrawer;
+import view.Drawer;
+
+public class Cercle implements Forme {
 	
 	private Point c;
 	private double r;
+	private CercleDrawer cd;//TODO this might cause problem in the future
 	
 	
 	public Cercle(Point centre, double rayon) {
 		this.c = centre;
 		this.r = rayon;
+		cd = new CercleDrawer(this);
+	}
+	
+	public Cercle(Point centre, double rayon, Dessin d) {
+		this.c = centre;
+		this.r = rayon;
+		d.add(this);
+		cd = new CercleDrawer(this);
 	}
 	
 	public double surface() {
@@ -49,5 +61,10 @@ public class Cercle extends Forme {
 	@Override
 	public String toString() {
 		return "centre: " + this.c + " rayon: " + this.r;
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		return cd;
 	}
 }

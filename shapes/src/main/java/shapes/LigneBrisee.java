@@ -1,14 +1,21 @@
-package fr.dauphine.ja.monrocqpierre.shapes;
+package shapes;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class LigneBrisee {
+import view.Drawer;
+
+public class LigneBrisee implements Forme {
 	
 	private List<Point> points;
 
 	public LigneBrisee() {
 		this.points = new LinkedList<Point>();
+	}
+	
+	public LigneBrisee(Dessin d) {
+		this.points = new LinkedList<Point>();
+		d.add(this);
 	}
 	
 	public int getNombrePoints() {
@@ -21,5 +28,11 @@ public class LigneBrisee {
 	
 	public boolean contains(Point point) {
 		return points.contains(point);
+	}
+
+	@Override
+	public Drawer getDrawer() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
