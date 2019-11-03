@@ -1,9 +1,10 @@
-package shapes;
+package fr.dauphine.ja.monrocqpierre.shapes;
 
-import view.CercleDrawer;
-import view.Drawer;
+import fr.dauphine.ja.monrocqpierre.observer.AbstractDessin;
+import fr.dauphine.ja.monrocqpierre.view.CercleDrawer;
+import fr.dauphine.ja.monrocqpierre.view.Drawer;
 
-public class Cercle implements Forme {
+public class Cercle extends AbstractDessin implements Forme  {
 	
 	private Point c;
 	private double r;
@@ -54,8 +55,9 @@ public class Cercle implements Forme {
 		return r;
 	}
 	
-	public Cercle translate(int dx, int dy) {
-		return new Cercle(c.translate(dx, dy),r);
+	public void translate(int dx, int dy) {//TODO ???
+		this.c.translate(dx, dy);
+		update(this);
 	}
 	
 	@Override

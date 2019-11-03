@@ -1,22 +1,27 @@
-package shapes;
+package fr.dauphine.ja.monrocqpierre.shapes;
 
-import view.Drawer;
+import fr.dauphine.ja.monrocqpierre.view.Drawer;
+import fr.dauphine.ja.monrocqpierre.view.PointDrawer;
 
 public class Point implements Forme {
 	
 	private int x;
 	private int y;
 	private static int nbPoints=0;
+	private final int thickness = 5;
+	private PointDrawer pd;
 	
 	public Point() {
 		this(0,0);
 		Point.nbPoints++;
+		this.pd = new PointDrawer(this,thickness);
 	}
 		
 	public Point(int x, int y) {
 		this.x = x;
 		this.y = y;
 		Point.nbPoints++;
+		this.pd = new PointDrawer(this,thickness);
 	}
 	
 	public Point(int x, int y, Dessin d) {
@@ -24,6 +29,7 @@ public class Point implements Forme {
 		this.y = y;
 		Point.nbPoints++;
 		d.add(this);
+		this.pd = new PointDrawer(this,thickness);
 	}
 	
 	public int getX() {
@@ -50,9 +56,9 @@ public class Point implements Forme {
 		return this.isSameAs(p);
 	}
 	
-	public Point translate(int dx, int dy) {
-		return new Point(this.x+dx,this.y+dy);
-	}
+//	public Point translate(int dx, int dy) {//TODO
+//		return new Point(this.x+dx,this.y+dy);
+//	}
 	
 	public static int getNbPoints() {
 		return Point.nbPoints;
@@ -68,8 +74,28 @@ public class Point implements Forme {
 
 	@Override
 	public Drawer getDrawer() {
+		return pd;
+	}
+
+	@Override
+	public boolean contains(Point point) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
+	}
+
+	@Override
+	public void translate(int dx, int dy) {//Remplacement du retour Point (immutable) 
+		setX(dx);
+		setY(dy);
+		
+	}
+	
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
 	}
 
 }

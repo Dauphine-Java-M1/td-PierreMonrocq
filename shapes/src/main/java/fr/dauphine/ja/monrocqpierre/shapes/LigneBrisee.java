@@ -1,9 +1,10 @@
-package shapes;
+package fr.dauphine.ja.monrocqpierre.shapes;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import view.Drawer;
+import fr.dauphine.ja.monrocqpierre.view.Drawer;
+
 
 public class LigneBrisee implements Forme {
 	
@@ -34,5 +35,10 @@ public class LigneBrisee implements Forme {
 	public Drawer getDrawer() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void translate(int dx, int dy) {
+		// TODO Auto-generated method stub
 	}
 }
