@@ -6,20 +6,20 @@ import java.util.List;
 import fr.dauphine.ja.monrocqpierre.view.Drawer;
 
 
-public class LigneBrisee implements Forme {
+public class BrokenLine implements Shape {
 	
 	private List<Point> points;
 
-	public LigneBrisee() {
+	public BrokenLine() {
 		this.points = new LinkedList<Point>();
 	}
 	
-	public LigneBrisee(Dessin d) {
+	public BrokenLine(Model d) {
 		this.points = new LinkedList<Point>();
 		d.add(this);
 	}
 	
-	public int getNombrePoints() {
+	public int getPointNumber() {
 		return points.size();
 	}
 	

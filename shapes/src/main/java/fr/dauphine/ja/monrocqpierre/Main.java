@@ -6,10 +6,9 @@ import javax.swing.JFrame;
 
 import fr.dauphine.ja.monrocqpierre.controller.AbstractControler;
 import fr.dauphine.ja.monrocqpierre.controller.MouseControler;
-import fr.dauphine.ja.monrocqpierre.observer.AbstractDessin;
-import fr.dauphine.ja.monrocqpierre.shapes.Anneau;
-import fr.dauphine.ja.monrocqpierre.shapes.Cercle;
-import fr.dauphine.ja.monrocqpierre.shapes.Dessin;
+import fr.dauphine.ja.monrocqpierre.shapes.Ring;
+import fr.dauphine.ja.monrocqpierre.shapes.Circle;
+import fr.dauphine.ja.monrocqpierre.shapes.Model;
 import fr.dauphine.ja.monrocqpierre.shapes.Point;
 import fr.dauphine.ja.monrocqpierre.view.MyDisplay;
 
@@ -18,10 +17,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Dessin d = new Dessin();
+		Model d = new Model();
 		AbstractControler abstractController = new MouseControler(d);
 		
-		MyDisplay display = new MyDisplay(abstractController);
+		MyDisplay display = new MyDisplay(abstractController,d);
 		d.addObserver(display);
 		
 		JFrame frame = new JFrame("Java Avancé");
@@ -31,11 +30,10 @@ public class Main {
 		frame.addMouseMotionListener((new MouseControler(d)));
 		frame.add(display);
 
-		//Ceci est a mettre dans le controlleur ?
 		Point p = new Point(190,400);
-		Cercle c = new Cercle(new Point(50,50), 80);
+		Circle c = new Circle(new Point(50,50), 80);
 		
-		Anneau anneau = new Anneau(new Point(300,200), 75, 35);
+		Ring anneau = new Ring(new Point(300,200), 75, 35);
 		d.add(anneau);
 		d.add(c);
 		d.add(p);

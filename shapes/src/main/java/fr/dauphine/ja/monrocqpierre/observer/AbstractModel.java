@@ -3,12 +3,12 @@ package fr.dauphine.ja.monrocqpierre.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.dauphine.ja.monrocqpierre.shapes.Forme;
+import fr.dauphine.ja.monrocqpierre.shapes.Shape;
 
-public abstract class AbstractDessin {
+public abstract class AbstractModel {
 	
 	private static List<Observer> observers = new ArrayList<Observer>();
-	protected List<Forme> formes = new ArrayList<Forme>();
+	protected List<Shape> formes = new ArrayList<Shape>();
 
 	public void addObserver(Observer observer) {
 		observers.add(observer);
@@ -17,13 +17,13 @@ public abstract class AbstractDessin {
 		observers.remove(observer);
 	}
 	
-	public void update(Object source) {
+	public void update() {
 		observers.forEach((e) -> {
-			e.update(this);
+			e.update();
 		});
 	}
 	
-	public List<Forme> getFormes() {
+	public List<Shape> getFormes() {
 		return formes;
 	}
 

@@ -1,16 +1,14 @@
 package fr.dauphine.ja.monrocqpierre.controller;
 
-import fr.dauphine.ja.monrocqpierre.observer.AbstractDessin;
+import fr.dauphine.ja.monrocqpierre.observer.AbstractModel;
 
 public abstract class AbstractControler {
 
-	protected AbstractDessin abstractModel;
+	protected AbstractModel abstractModel;
 	
-	public AbstractControler(AbstractDessin abstractModel) {
+	public AbstractControler(AbstractModel abstractModel) {
 		this.abstractModel = abstractModel;
 	}
-	
-	//TODO methode de remise à zero ?
 	
 	abstract void control();
 }

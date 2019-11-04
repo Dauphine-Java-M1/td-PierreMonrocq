@@ -3,7 +3,7 @@ package fr.dauphine.ja.monrocqpierre.shapes;
 import fr.dauphine.ja.monrocqpierre.view.Drawer;
 import fr.dauphine.ja.monrocqpierre.view.PointDrawer;
 
-public class Point implements Forme {
+public class Point implements Shape {
 	
 	private int x;
 	private int y;
@@ -24,7 +24,7 @@ public class Point implements Forme {
 		this.pd = new PointDrawer(this,thickness);
 	}
 	
-	public Point(int x, int y, Dessin d) {
+	public Point(int x, int y, Model d) {
 		this.x = x;
 		this.y = y;
 		Point.nbPoints++;
@@ -56,15 +56,11 @@ public class Point implements Forme {
 		return this.isSameAs(p);
 	}
 	
-//	public Point translate(int dx, int dy) {//TODO
-//		return new Point(this.x+dx,this.y+dy);
-//	}
-	
-	public static int getNbPoints() {
+	public static int getPointNumber() {
 		return Point.nbPoints;
 	}
 	
-	public static void setNbPoints(int nbPoints) {
+	public static void setPointNumber(int nbPoints) {
 		Point.nbPoints = nbPoints;
 	}
 	
@@ -84,10 +80,9 @@ public class Point implements Forme {
 	}
 
 	@Override
-	public void translate(int dx, int dy) {//Remplacement du retour Point (immutable) 
-		setX(dx);
-		setY(dy);
-		
+	public void translate(int dx, int dy) {
+		this.x = dx;
+		this.y = dy;
 	}
 	
 	public void setX(int x) {

@@ -1,27 +1,26 @@
 package fr.dauphine.ja.monrocqpierre.shapes;
 
-import fr.dauphine.ja.monrocqpierre.observer.AbstractDessin;
-import fr.dauphine.ja.monrocqpierre.view.CercleDrawer;
+import fr.dauphine.ja.monrocqpierre.view.CircleDrawer;
 import fr.dauphine.ja.monrocqpierre.view.Drawer;
 
-public class Cercle extends AbstractDessin implements Forme  {
+public class Circle implements Shape  {
 	
 	private Point c;
 	private double r;
-	private CercleDrawer cd;//TODO this might cause problem in the future
+	private CircleDrawer cd;//TODO this might cause problem in the future
 	
 	
-	public Cercle(Point centre, double rayon) {
+	public Circle(Point centre, double rayon) {
 		this.c = centre;
 		this.r = rayon;
-		cd = new CercleDrawer(this);
+		cd = new CircleDrawer(this);
 	}
 	
-	public Cercle(Point centre, double rayon, Dessin d) {
+	public Circle(Point centre, double rayon, Model d) {
 		this.c = centre;
 		this.r = rayon;
 		d.add(this);
-		cd = new CercleDrawer(this);
+		cd = new CircleDrawer(this);
 	}
 	
 	public double surface() {
@@ -31,8 +30,8 @@ public class Cercle extends AbstractDessin implements Forme  {
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Point)) return false;
-		Cercle cercle = (Cercle) obj;
-		return cercle.getCentre().equals(c) && cercle.getRayon() == r;
+		Circle cercle = (Circle) obj;
+		return cercle.getCenter().equals(c) && cercle.getRadius() == r;
 		
 	}
 	
@@ -40,24 +39,23 @@ public class Cercle extends AbstractDessin implements Forme  {
 		return c.produitScalaire(point) <= Math.pow(r, 2);
 	}
 	
-	public static boolean contains(Point point, Cercle...cercles) {
-		for(Cercle c : cercles) {
+	public static boolean contains(Point point, Circle...cercles) {
+		for(Circle c : cercles) {
 			if(c.contains(point)) return true;
 		}
 		return false;
 	}
 	
-	public Point getCentre() {
+	public Point getCenter() {
 		return c;
 	}
 	
-	public double getRayon() {
+	public double getRadius() {
 		return r;
 	}
 	
-	public void translate(int dx, int dy) {//TODO ???
+	public void translate(int dx, int dy) {
 		this.c.translate(dx, dy);
-		update(this);
 	}
 	
 	@Override
