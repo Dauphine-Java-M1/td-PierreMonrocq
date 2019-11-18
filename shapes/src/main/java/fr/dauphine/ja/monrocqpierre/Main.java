@@ -32,10 +32,12 @@ public class Main {
 
 		Point p = new Point(190,400);
 		Circle c = new Circle(new Point(50,50), 80);
+		Circle c2 = new Circle(new Point(300,200), 80);
 		
-		Ring anneau = new Ring(new Point(300,200), 75, 35);
-		d.add(anneau);
+		//Ring anneau = new Ring(new Point(300,200), 75, 35);
+		//d.add(anneau);
 		d.add(c);
 		d.add(p);
+		d.add(c2);
 	}
 }
