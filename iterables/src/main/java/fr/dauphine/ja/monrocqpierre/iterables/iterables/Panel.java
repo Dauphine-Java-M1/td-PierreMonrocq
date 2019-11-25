@@ -30,8 +30,7 @@ public class Panel extends AbstractList<Integer>{
 			
 		};
 	}
-	
-	public static List<Integer> panel3(int a, int b){
+	public static List<Integer> panel(int a, int b){
 		return new Panel(a,b);
 	}
 	
