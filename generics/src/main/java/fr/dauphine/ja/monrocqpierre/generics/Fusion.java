@@ -1,7 +1,8 @@
 package fr.dauphine.ja.monrocqpierre.generics;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Fusion {
@@ -19,16 +20,13 @@ public class Fusion {
 	
 	private static <T> List<T> fusion(List<? extends T> l1, List<? extends T> l2) {
 		
-		List<T> fusion = new ArrayList<T>();
+		List<T> fusion = new LinkedList<T>();
+		Iterator<? extends T> it1 = l1.iterator();
+		Iterator<? extends T> it2 = l2.iterator();
 		
-		int n = Math.max(l1.size(),l2.size());
-		for(int i=0;i<n; i++) {
-			if(i < l1.size()) {
-				fusion.add(l1.get(i));
-			}
-			if(i < l2.size()) {
-				fusion.add(l2.get(i));
-			}
+		while(it1.hasNext()) {
+			fusion.add(it1.next());
+			fusion.add(it2.next());
 		}
 		return fusion;
 	}
